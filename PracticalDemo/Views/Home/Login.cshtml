@@ -1,0 +1,119 @@
+﻿@model PracticalDemo.tbl_user2
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="~/CustomStyleSeets/LoginStyleSheet.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="LoginformLayout">
+        <div class="row">
+            @*<div class="col-md-6">
+                <div id="loginimage">
+
+                </div>
+            </div>*@
+            <div class="col-md-6">
+                <div id="loginform">
+                    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                    {
+                        <h3>Login Form</h3>
+                        <form class="form-horizontal">
+
+                            <div class="form-group">
+                                @*  @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="glyphicon glyphicon-user"></i>
+
+                                        </span>
+                                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control",@placeholder="Enter your user name" } })
+                                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                            </div>
+
+                         
+
+                            <div class="form-group">
+                                @*   @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="glyphicon glyphicon-phone"></i>
+                                        </span>
+                                        @Html.EditorFor(model => model.phonno, new { htmlAttributes = new { @class = "form-control",@placeholder="********" } })
+                                        @Html.ValidationMessageFor(model => model.phonno, "", new { @class = "text-danger" })
+
+                                        @*@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control",@placeholder="********" } })
+        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })*@
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-5 col-md-2">
+                                    <input type="submit" value="Login" class="btn btn-primary" />
+
+                                </div>
+                            </div>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+@*<h2>Login</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>tbl_user</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
