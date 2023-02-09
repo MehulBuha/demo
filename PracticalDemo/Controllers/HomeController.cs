@@ -50,14 +50,8 @@ namespace PracticalDemo.Controllers
 
         public ActionResult ListUsers()
         {
-
-
             PracticalDemoEntities2 db = new PracticalDemoEntities2();
-           
-
             var users = db.tbl_user2.ToList();
-
-            
             return View(users);
         }
 
